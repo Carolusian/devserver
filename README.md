@@ -83,3 +83,12 @@ Sometimes, you may want to benchmark again CPU, can use `Sys.setenv(CUDA_VISIBLE
 - then, set CUDA version via `sys.setenv` accordingly
 - then, install mlverse/torch
 - If certain `.so` files cannot be found, just use `find` and copy them over
+
+## Free disk space
+
+```
+sudo pacman -Sc
+sudo pacman -Qdt
+sudo pacman -Rns $(pacman -Qtdq)
+sudo journalctl --vacuum-size=50M
+```
