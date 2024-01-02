@@ -25,6 +25,7 @@
 - Mount NFS directory: `/mnt/sample-pool/nfs`
 - Use systemd to auto mount on startup
 - `sudo systemd-escape -p --suffix=mount '/mnt/nfs'`: Where= must be matched to the unit name
+- `sudo systemctl enable mnt-nfs.mount --now`
 
 ```
 # /etc/systemd/system/mnt-nfs.mount
