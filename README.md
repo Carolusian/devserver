@@ -94,6 +94,8 @@ reticulate::import("tensorflow")
 tf$sysconfig$get_build_info()
 ```
 
+`reticulate`'s conda can be used in shell after `init`, e.g. `~/.local/share/r-miniconda/bin/conda init zsh`
+
 ## Install torch with CUDA support
 
 - In rstudio, can combine `use_virtualenv` and `py_install(..., pip = TRUE)` to install pytorch with CUDA support
