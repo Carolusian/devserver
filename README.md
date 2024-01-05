@@ -78,6 +78,22 @@ sudo pacman -S tensorflow-cuda python-tensorflow-cuda
 
 Sometimes, you may want to benchmark again CPU, can use `Sys.setenv(CUDA_VISIBLE_DEVICES = -1)` to disable CUDA support
 
+NOTE: 
+
+- ArchLinux update is rolling based, which makes the dependencies in relation to CUDA unstable; in this case, conda is preferred. 
+- However, conda doesn't work well with tensorflow[and-cuda] for 2.11-2.15
+- So, elder version tensorflow-gpu==2.10.0 is more stable, can test again when tensorflow 2.16 is released
+
+Quick start with `conda`:
+
+```
+conda_create(env_name, python_version = "3.11")
+use_condaenv(condaenv = env_name)
+reticulate::conda_install(envname = env_name, packages = c("tensorflow-gpu==2.10.0"))
+reticulate::import("tensorflow")
+tf$sysconfig$get_build_info()
+```
+
 ## Install torch with CUDA support
 
 - In rstudio, can combine `use_virtualenv` and `py_install(..., pip = TRUE)` to install pytorch with CUDA support
