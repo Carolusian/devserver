@@ -87,7 +87,7 @@ NOTE:
 Quick start with `conda`:
 
 ```
-conda_create(env_name, python_version = "3.11")
+conda_create(env_name, python_version = "3.10")  # python 3.10 is latest version compatible with tensorflow 2.10
 use_condaenv(condaenv = env_name)
 reticulate::conda_install(envname = env_name, packages = c("tensorflow-gpu==2.10.0"))
 reticulate::import("tensorflow")
