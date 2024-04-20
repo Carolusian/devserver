@@ -111,3 +111,16 @@ sudo pacman -Qdt
 sudo pacman -Rns $(pacman -Qtdq)
 sudo journalctl --vacuum-size=50M
 ```
+
+## Install RStudio Server from Source (MacOS M1)
+
+- See: [M1 Mac Dev Machine Setup](https://github.com/rstudio/rstudio/wiki/M1-Mac-Dev-Machine-Setup)
+- `install-dependencies-osx` shall be `install-dependencies-osx-arch`
+- `soci` error
+  - `brew install soci`
+  - update the CMakeLists.txt from `set(SOCI_LIBRARY_DIR "${RSTUDIO_TOOLS_SOCI}/build/lib")` to `set(SOCI_LIBRARY_DIR "/opt/homebrew/lib")`
+  - actually the above may be avoided using by install the dependences in `dependencies/common/install-soci`
+- `dependencies/common/install-soci`
+- `sudo cp /etc/pam.d/cups /etc/pam.d/rstudio`
+- In order to open the `GWT Development Mode`, need to login to the desktop GUI
+
