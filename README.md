@@ -136,3 +136,9 @@ sudo journalctl --vacuum-size=50M
 conda install r-recommended r-irkernel
 R -e 'IRkernel::installspec()'
 ```
+
+```
+conda install -y -c apple tensorflow-deps
+python -m pip install tensorflow-macos
+python -m pip install tensorflow-metal
+```
