@@ -112,7 +112,7 @@ sudo pacman -Rns $(pacman -Qtdq)
 sudo journalctl --vacuum-size=50M
 ```
 
-## Install RStudio Server from Source (MacOS M1)
+## Install RStudio Server from Source (MacOS M1) (NOT able to successfully install, recommend Juypter Lab)
 
 - See: [M1 Mac Dev Machine Setup](https://github.com/rstudio/rstudio/wiki/M1-Mac-Dev-Machine-Setup)
 - `install-dependencies-osx` shall be `install-dependencies-osx-arch`
@@ -124,3 +124,15 @@ sudo journalctl --vacuum-size=50M
 - `sudo cp /etc/pam.d/cups /etc/pam.d/rstudio`
 - In order to open the `GWT Development Mode`, need to login to the desktop GUI
 
+
+## ASDF + Conda + Jupyter Lab + rpy2 (MacOS M1)
+
+- conda active, then Jupyter Lab
+- Jupyter Extensions:
+  - jupyter-lsp-jupyterlab-lsp
+  - jupyterlab-jupytext (For Rmd and qmd support)
+
+```
+conda install r-recommended r-irkernel
+R -e 'IRkernel::installspec()'
+```
